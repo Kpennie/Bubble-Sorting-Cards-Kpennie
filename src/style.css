@@ -1,5 +1,142 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #52c487;
+    margin: 0;
+    padding: 20px;
+    color: #000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.controls input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #333;
+    font-size: 16px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: 1px solid #333;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #f0f0f0;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+.card {
+    width: 60px;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+}
+
+.card.hearts .card-suit,
+.card.diamonds .card-suit {
+    color: red;
+}
+
+.card.clubs .card-suit,
+.card.spades .card-suit {
+    color: black;
+}
+
+.card-value {
+    font-size: 12px;
+}
+
+.card-suit {
+    font-size: 20px;
+}
+
+.card-value-bottom {
+    font-size: 12px;
+    transform: rotate(180deg);
+}
+
+.sort-log {
+    margin-top: 20px;
+}
+
+.sort-log h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.log-step {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.log-card {
+    width: 30px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.log-card.hearts .log-suit,
+.log-card.diamonds .log-suit {
+    color: red;
+}
+
+.log-card.clubs .log-suit,
+.log-card.spades .log-suit {
+    color: black;
+}
+
+.log-suit {
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
 }

@@ -4,24 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorting Cards with select Kpennie</title>
+    <title>Sorting Cards with Select - Kpennie</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
+    <!-- FontAwesome (optional for icons) -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Random Card Generator</h1>
-  <button onclick="generateCards()">Generate Cards</button>
+    <div class="container">
+      <div class="controls">
+        <label>Original:</label>
+        <input type="number" id="cardCount" value="6" min="1" max="20" />
+        <button id="drawBtn">Draw</button>
+        <button id="sortBtn" disabled>Sort</button>
+      </div>
 
-  <div id="card-container"></div>
-   
+      <div class="cards-container" id="cardsContainer"></div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
+      <div class="sort-log" id="sortLog" style="display: none;">
+        <h3>Select Sort Log:</h3>
+        <div id="logSteps"></div>
+      </div>
+    </div>
+
+    <!-- Connects to your JS -->
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
