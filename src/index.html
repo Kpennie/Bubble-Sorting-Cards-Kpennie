@@ -14,7 +14,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -24,17 +23,17 @@
         <input type="number" id="cardCount" value="6" min="1" max="20" />
         <button id="drawBtn">Draw</button>
         <button id="sortBtn" disabled>Sort</button>
+        <button id="bubbleSortBtn" disabled>Bubble Sort</button>
       </div>
 
       <div class="cards-container" id="cardsContainer"></div>
 
       <div class="sort-log" id="sortLog" style="display: none;">
-        <h3>Select Sort Log:</h3>
+        <h3>Bubble Log:</h3>
         <div id="logSteps"></div>
       </div>
     </div>
 
-    <!-- Connects to your JS -->
     <script type="module" src="./app.js"></script>
   </body>
 </html>

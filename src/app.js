@@ -85,6 +85,8 @@ function drawCards() {
   renderCards(currentCards);
 
   document.getElementById("sortBtn").disabled = false;
+  document.getElementById("bubbleSortBtn").disabled = false;
+
   document.getElementById("sortLog").style.display = "none";
   sortSteps = [];
 }
@@ -115,6 +117,24 @@ function selectionSort(arr) {
   return { sortedArray, steps };
 }
 
+function bubbleSort(arr) {
+  const steps = [];
+  const sortedArray = [...arr];
+  const n = sortedArray.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - 1 - i; j++) {
+      if (getCardValue(sortedArray[j]) > getCardValue(sortedArray[j + 1])) {
+        [sortedArray[j], sortedArray[j + 1]] = [sortedArray[j + 1], sortedArray[j]];
+      }
+      steps.push([...sortedArray]);
+    }
+  }
+
+  return { sortedArray, steps };
+}
+
+
 function sortCards() {
   if (currentCards.length === 0) return;
 
@@ -127,6 +147,21 @@ function sortCards() {
 
   document.getElementById("sortBtn").disabled = true;
 }
+
+function sortCardsWithBubble() {
+  if (currentCards.length === 0) return;
+
+  const result = bubbleSort(currentCards);
+  currentCards = result.sortedArray;
+  sortSteps = result.steps;
+
+  renderCards(currentCards);
+  displaySortLog();
+
+  document.getElementById("bubbleSortBtn").disabled = true;
+  document.getElementById("sortBtn").disabled = true;
+}
+
 
 function displaySortLog() {
   const logContainer = document.getElementById("logSteps");
@@ -146,5 +181,9 @@ function displaySortLog() {
 window.onload = function () {
   document.getElementById("drawBtn").addEventListener("click", drawCards);
   document.getElementById("sortBtn").addEventListener("click", sortCards);
-  drawCards(); // Optional: draw cards immediately when the page loads
+  document
+    .getElementById("bubbleSortBtn")
+    .addEventListener("click", sortCardsWithBubble);
+
+  drawCards(); 
 };
